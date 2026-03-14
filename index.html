@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk HRM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Masuk HRM Dashboard</h1>
+      <p>Simple HR management system for employee, attendance, leave, and payroll tracking.</p>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Add Employee</h2>
+        <form id="employee-form">
+          <input type="text" id="name" placeholder="Employee Name" required />
+          <input type="text" id="role" placeholder="Role" required />
+          <input type="number" id="salary" placeholder="Monthly Salary" required min="1" />
+          <button type="submit">Add Employee</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Employees</h2>
+        <div id="employees" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Attendance</h2>
+        <form id="attendance-form">
+          <select id="attendance-employee" required></select>
+          <select id="attendance-status" required>
+            <option value="Present">Present</option>
+            <option value="Late">Late</option>
+            <option value="Absent">Absent</option>
+          </select>
+          <button type="submit">Mark Attendance</button>
+        </form>
+        <div id="attendance-log" class="list compact"></div>
+      </section>
+
+      <section class="card">
+        <h2>Leave Requests</h2>
+        <form id="leave-form">
+          <select id="leave-employee" required></select>
+          <input type="text" id="leave-reason" placeholder="Reason" required />
+          <button type="submit">Submit Leave</button>
+        </form>
+        <div id="leave-log" class="list compact"></div>
+      </section>
+
+      <section class="card summary">
+        <h2>Payroll Summary</h2>
+        <p>Total Employees: <strong id="total-employees">0</strong></p>
+        <p>Total Monthly Payroll: <strong id="total-payroll">৳0</strong></p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
